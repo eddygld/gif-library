@@ -9,14 +9,12 @@ const GifList = (props) => {
 
     return (
         <div>
-            <Grid container spacing={2} style={{padding: 24}} >
-                <Grid container spacing={2}>
+            <Grid container spacing={8} justify='center' style={{padding: 24}} >
                     {data.map(item => (
-                        <Grid item xs={12} sm={6} lg={4} xl={3} > 
+                        <Grid item > 
                             <Gif imgUrl={item.images.fixed_height.url} /> 
                         </Grid>
                     ) )}
-                </Grid>
             </Grid>
             
         </div>
