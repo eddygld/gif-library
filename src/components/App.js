@@ -11,16 +11,20 @@ class App extends Component{
   };
 
   componentDidMount() {
-    // axios.get('https://api.giphy.com/v1/gifs/trending?api_key=UUkEuZy18qSIDoUXfy0HMbuF2BYNddqX&limit=25&rating=g')
-    //   .then(response => {
-    //     console.log(response);
-    //     this.setState({
-    //       gifs: response.data.data
-    //     });
-    //   })
-    //   .catch(error => {
-    //     console.log('Error fetching and parsing data', error);
-    //   });
+    this.getTrendingGifs();
+  }
+
+  getTrendingGifs = () => {
+    axios.get('https://api.giphy.com/v1/gifs/trending?api_key=UUkEuZy18qSIDoUXfy0HMbuF2BYNddqX&limit=25&rating=g')
+      .then(response => {
+        console.log(response);
+        this.setState({
+          gifs: response.data.data
+        });
+      })
+      .catch(error => {
+        console.log('Error fetching and parsing data', error);
+      });
   }
 
   searchGif = (searchQuery) => {
