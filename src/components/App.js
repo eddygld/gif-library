@@ -2,12 +2,14 @@ import React, {Component} from 'react'
 import NavBar from './NavBar'
 import GridList from './GifList'
 import SearchBox from './SearchBox'
+import Typography from '@material-ui/core/Typography'
 import axios from 'axios'
 
 class App extends Component{
 
   state = {
-    gifs: []
+    gifs: [],
+    isLoading: true
   };
 
   componentDidMount() {
@@ -19,7 +21,8 @@ class App extends Component{
       .then(response => {
         console.log(response);
         this.setState({
-          gifs: response.data.data
+          gifs: response.data.data,
+          isLoading: false
         });
       })
       .catch(error => {
@@ -32,7 +35,8 @@ class App extends Component{
       .then(response => {
         console.log(response);
         this.setState({
-          gifs: response.data.data
+          gifs: response.data.data,
+          isLoading: false
         });
       })
       .catch(error => {
@@ -45,7 +49,14 @@ class App extends Component{
       <div>
         <NavBar />
         <SearchBox onSearch={this.searchGif} />
-        <GridList data={this.state.gifs} />
+        {
+          (this.state.isLoading) ?
+          <Typography variant='h3' align='center' color='primary' >
+            Loading...
+          </Typography>
+          :
+          <GridList data={this.state.gifs} />
+        }
       </div>
       
       

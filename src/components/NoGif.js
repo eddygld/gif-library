@@ -15,7 +15,7 @@ const NoGif = () => {
                             }} >
                                 <SentimentDissatisfiedIcon style={{ fontSize: 150}} color='primary' />
                             </div>
-                            <Typography variant='h3' color='primary' >
+                            <Typography variant='h3' align='center' color='primary' >
                                 Sorry, no GIFs match your search.
                             </Typography>
                         </Grid>
