@@ -6,9 +6,9 @@ import Typography from '@material-ui/core/Typography'
 const NavBar = () => {
     return (
         <div>
-            <AppBar position="static">
+            <AppBar position='static'>
                 <Toolbar>
-                    <Typography variant="h5" color="inherit" >
+                    <Typography variant='h5' color='inherit' >
                         GIF LIBRARY
                     </Typography>
                 </Toolbar>

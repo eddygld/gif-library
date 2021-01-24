@@ -15,7 +15,7 @@ class App extends Component{
   }
 
   getTrendingGifs = () => {
-    axios.get('https://api.giphy.com/v1/gifs/trending?api_key=UUkEuZy18qSIDoUXfy0HMbuF2BYNddqX&limit=25&rating=g')
+    axios.get('https://api.giphy.com/v1/gifs/trending?api_key=UUkEuZy18qSIDoUXfy0HMbuF2BYNddqX&limit=24&rating=g')
       .then(response => {
         console.log(response);
         this.setState({

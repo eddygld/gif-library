@@ -20,12 +20,12 @@ class SearchBox extends Component {
     render() {
         return (
             <div>
-                <form noValidate autoComplete="off" style={{padding: 24}} onSubmit={this.handleSubmit} >
-                    <TextField variant="outlined"
-                        id="gifSearch"
-                        label="Search for Gifs"   
-                        margin="normal"
-                        type="search"
+                <form noValidate autoComplete='off' style={{padding: 24}} onSubmit={this.handleSubmit} >
+                    <TextField variant='outlined'
+                        id='gifSearch'
+                        label='Search for Gifs'   
+                        margin='normal'
+                        type='search'
                         onChange={this.handleSearchTextChange}
                     />
                 </form>
