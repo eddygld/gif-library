@@ -1,5 +1,11 @@
 import React, { Component } from 'react'
-import TextField from '@material-ui/core/TextField'
+// import TextField from '@material-ui/core/TextField'
+import Paper from '@material-ui/core/Paper'
+import InputBase from '@material-ui/core/InputBase'
+import IconButton from '@material-ui/core/IconButton'
+import SearchIcon from '@material-ui/icons/Search'
+
+
 
 class SearchBox extends Component {
 
@@ -20,15 +26,25 @@ class SearchBox extends Component {
     render() {
         return (
             <div>
-                <form noValidate autoComplete='off' style={{padding: 24}} onSubmit={this.handleSubmit} >
-                    <TextField variant='outlined'
+                <Paper component='form'
+                        noValidate autoComplete='off'
+                        style={{
+                                padding: '2px 4px', 
+                                display: 'flex', 
+                                width: 300, 
+                                marginTop: '30px'
+                                }}
+                        onSubmit={this.handleSubmit} >
+                    <InputBase
                         id='gifSearch'
-                        label='Search for Gifs'   
-                        margin='normal'
-                        type='search'
+                        placeholder='Search for Gifs'   
+                        style={{marginLeft: '10px', flex: 1}}
                         onChange={this.handleSearchTextChange}
                     />
-                </form>
+                    <IconButton type="submit" aria-label="search">
+                        <SearchIcon />
+                    </IconButton>
+                </Paper>
                 
             </div>
         )
